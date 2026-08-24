@@ -50,7 +50,7 @@ Administrators can manage available inventory through a dedicated management int
 
 ## Getting Started
 
-Instructions for installing dependencies and running the application locally.
+Instructions for installing dependencies comming soon.
 
 ## Author
 
