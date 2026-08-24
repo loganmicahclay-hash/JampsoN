@@ -36,21 +36,10 @@ print(" - Creating Users...", end="")
 password = "baz".encode("utf-8")
 pass_hash = bcrypt.hashpw(password, bcrypt.gensalt())
 
-
-User.create(
-    fname="DevOcho",
-    lname="Company",
-    compae",
-    phone_nuny_name="DevOcho",
-    address="Hommber="417-555-2847",
-    email="foo@bar.com",
-    password=pass_hash
-)
-
 User.create(
     fname="Logan",
     lname="Clay",
-    company_name="DevOcho",
+    company_name="",
     address="421 Bluebonnet Ridge Dr Austin, TX 78745 USA",
     phone_number="123-456-7890",
     email="logan.clay@example.com",
@@ -65,7 +54,7 @@ pass_hash = bcrypt.hashpw(password, bcrypt.gensalt())
 User.create(
     fname="Caleb",
     lname="Johnson",
-    company_name="DevOcho",
+    company_name="",
     address="1458 Oak Street Denver, CO 80203 USA",
     phone_number="303-555-7812",
     email="caleb.johnson@example.com",
