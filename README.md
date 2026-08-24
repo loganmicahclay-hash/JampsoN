@@ -96,6 +96,7 @@ flask run
 
 Open the local address displayed by Flask in your web browser.
 
-## Author
+## Contributors
 
-Logan Clay
+- **Logan Clay** — Lead developer
+- **Caleb Johnson** — UI/UX and CSS
