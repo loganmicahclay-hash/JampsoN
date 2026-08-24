@@ -50,7 +50,49 @@ Administrators can manage available inventory through a dedicated management int
 
 ## Getting Started
 
-Instructions for installing dependencies comming soon.==
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/loganmicahclay-hash/JampsoN.git
+cd JampsoN
+```
+
+### 2. Create a virtual environment
+
+**Windows PowerShell:**
+
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate
+```
+
+**macOS/Linux:**
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Set up the database
+
+```bash
+python initdb.py
+python seed.py
+```
+
+### 5. Run the application
+
+```bash
+flask run
+```
+
+Open the local address displayed by Flask in your web browser.
 
 ## Author
 
