@@ -50,7 +50,7 @@ Administrators can manage available inventory through a dedicated management int
 
 ## Getting Started
 
-Instructions for installing dependencies comming soon.
+Instructions for installing dependencies comming soon.==
 
 ## Author
 
