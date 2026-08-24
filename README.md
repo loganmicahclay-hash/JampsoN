@@ -89,6 +89,8 @@ python seed.py
 ### 5. Run the application
 
 ```bash
+export FLASK_APP=app.py
+export FLASK_DEBUG=1
 flask run
 ```
 
