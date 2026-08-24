@@ -170,7 +170,7 @@ Inventory.create(
     fruit="Apple",
     stock=42,
     expiration=datetime.now() + timedelta(days=14),
-    location="Texas",
+    location="Santiago",
     price=1.50
 )
 
@@ -178,7 +178,7 @@ Inventory.create(
     fruit="Banana",
     stock=60,
     expiration=datetime.now() + timedelta(days=6),
-    location="Texas",
+    location="Santiago",
     price=0.65
 )
 
@@ -186,7 +186,7 @@ Inventory.create(
     fruit="Orange",
     stock=35,
     expiration=datetime.now() + timedelta(days=9),
-    location="Texas",
+    location="Santiago",
     price=1.10
 )
 
@@ -194,170 +194,8 @@ Inventory.create(
     fruit="Mango",
     stock=48,
     expiration=datetime.now() + timedelta(days=5),
-    location="Texas",
+    location="Santiago",
     price=0.85
-)
-
-
-Inventory.create(
-    fruit="Apple",
-    stock=40,
-    expiration=datetime.now() + timedelta(days=8),
-    location="Santiago",
-    price=1.20
-)
-
-Inventory.create(
-    fruit="Banana",
-    stock=55,
-    expiration=datetime.now() + timedelta(days=4),
-    location="Santiago",
-    price=0.70
-)
-
-Inventory.create(
-    fruit="Orange",
-    stock=47,
-    expiration=datetime.now() + timedelta(days=11),
-    location="Santiago",
-    price=1.15
-)
-
-Inventory.create(
-    fruit="Mango",
-    stock=65,
-    expiration=datetime.now() + timedelta(days=3),
-    location="Santiago",
-    price=0.60
-)
-
-Inventory.create(
-    fruit="Grape",
-    stock=32,
-    expiration=datetime.now() + timedelta(days=13),
-    location="Santiago",
-    price=2.25
-)
-
-Inventory.create(
-    fruit="Strawberry",
-    stock=28,
-    expiration=datetime.now() + timedelta(days=5),
-    location="Santiago",
-    price=2.75
-)
-
-Inventory.create(
-    fruit="Apple",
-    stock=50,
-    expiration=datetime.now() + timedelta(days=15),
-    location="Santiago",
-    price=1.35
-)
-
-Inventory.create(
-    fruit="Banana",
-    stock=38,
-    expiration=datetime.now() + timedelta(days=7),
-    location="Santiago",
-    price=0.80
-)
-
-Inventory.create(
-    fruit="Orange",
-    stock=44,
-    expiration=datetime.now() + timedelta(days=12),
-    location="Santiago",
-    price=1.05
-)
-
-Inventory.create(
-    fruit="Mango",
-    stock=57,
-    expiration=datetime.now() + timedelta(days=6),
-    location="Santiago",
-    price=0.55
-)
-
-
-Inventory.create(
-    fruit="Apple",
-    stock=46,
-    expiration=datetime.now() + timedelta(days=10),
-    location="Santo Domingo",
-    price=1.40
-)
-
-Inventory.create(
-    fruit="Banana",
-    stock=42,
-    expiration=datetime.now() + timedelta(days=14),
-    location="Santo Domingo",
-    price=1.50
-)
-
-Inventory.create(
-    fruit="Orange",
-    stock=39,
-    expiration=datetime.now() + timedelta(days=8),
-    location="Santo Domingo",
-    price=1.25
-)
-
-Inventory.create(
-    fruit="Mango",
-    stock=52,
-    expiration=datetime.now() + timedelta(days=4),
-    location="Santo Domingo",
-    price=0.90
-)
-
-Inventory.create(
-    fruit="Grape",
-    stock=37,
-    expiration=datetime.now() + timedelta(days=12),
-    location="Santo Domingo",
-    price=2.50
-)
-
-Inventory.create(
-    fruit="Strawberry",
-    stock=24,
-    expiration=datetime.now() + timedelta(days=3),
-    location="Santo Domingo",
-    price=3.25
-)
-
-Inventory.create(
-    fruit="Apple",
-    stock=58,
-    expiration=datetime.now() + timedelta(days=16),
-    location="Santo Domingo",
-    price=1.30
-)
-
-Inventory.create(
-    fruit="Banana",
-    stock=45,
-    expiration=datetime.now() + timedelta(days=9),
-    location="Santo Domingo",
-    price=1.10
-)
-
-Inventory.create(
-    fruit="Orange",
-    stock=41,
-    expiration=datetime.now() + timedelta(days=13),
-    location="Santo Domingo",
-    price=1.35
-)
-
-Inventory.create(
-    fruit="Mango",
-    stock=63,
-    expiration=datetime.now() + timedelta(days=7),
-    location="Santo Domingo",
-    price=0.75
 )
 
 print(" done")
