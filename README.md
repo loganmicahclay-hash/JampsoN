@@ -29,7 +29,7 @@ and running the application locally.
 
 ## Screenshots
 
-Screenshots of the application go here.
+Coming soon
 
 ## Author
 
