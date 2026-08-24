@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-12">
+            <h2>Add New Location</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <form method="post" action="{{ url_for('location.save') }}">
+
+                <div class="form-group">
+                    <label for="manager">Manager Name</label>
+                    <input type="text" class="form-control" id="manager" name="manager" placeholder="Name"
+                        autocomplete="off"">
+                </div>
+                
+                <div class=" form-group mt-3">
+                    <label for="address">Location Address</label>
+                    <input type="text" class="form-control" id="address" name="address" placeholder=""
+                        autocomplete="off">
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="employees">Starting Employees</label>
+                    <input type="number" class="form-control" id="employees" name="employees" placeholder="00"
+                        autocomplete="off">
+                </div>
+
+                <div class="d-flex align-items-center gap-4 mt-2">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a href="{{ url_for('location.browse') }}" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

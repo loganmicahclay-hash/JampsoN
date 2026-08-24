@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="fruit-page">
+
+<!-- LEFT SIDE: Fruit Inventory -->
+<div class="fruit-inventory">
+
+    <h1>Available Fruits</h1>
+
+    <div class="fruit-grid">
+
+        {% for item in inventory %}
+
+            {% if item.stock - cart.get(item.id|string, 0) > 0 %}
+
+            <div id="fruit-{{ item.id }}">
+
+                <form
+                    method="POST"
+                    action="{{ url_for('order.add_to_order', inventory_id=item.id) }}"
+                    hx-post="{{ url_for('order.add_to_order', inventory_id=item.id) }}"
+                    hx-target="#order-items"
+                    hx-swap="innerHTML"
+                >
+
+                    <button
+                        type="submit"
+                        class="fruit-test fruit-{{ item.fruit | lower }}"
+                    >
+
+                        <h2>{{ item.fruit }}</h2>
+
+                        <p>
+                            Expires:
+                            {{ item.expiration.strftime("%b %d %Y") }}
+                        </p>
+
+                        <p>
+                            Price:
+                            ${{ "%.2f"|format(item.price) }}
+                        </p>
+
+                        <p>
+                            In Stock:
+                            <span id="stock-{{ item.id }}">
+                                {{ item.stock - cart.get(item.id|string, 0) }}
+                            </span>
+                        </p>
+
+                        <p>
+                            Location:
+                            {{ item.location }}
+                        </p>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+            {% endif %}
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+
+<!-- RIGHT SIDE: Order -->
+<div class="order-sidebar">
+
+    <h2>Your Order</h2>
+
+    <div id="order-items" class="order-items">
+
+        <p>No items selected.</p>
+
+    </div>
+
+    <!-- Place Order Area -->
+    <div id="order-bottom" class="order-bottom">
+
+        <!-- Hidden until something is added to the cart -->
+        {% if cart %}
+
+            <div class="order-total">
+                Total: $0.00
+            </div>
+
+            <a
+                href="{{ url_for('order.checkout') }}"
+                class="place-order btn btn-primary"
+            >
+                Place Order
+            </a>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+</div>
+
+{% endblock %}

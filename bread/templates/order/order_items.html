@@ -1,0 +1,80 @@
+{% if order_items %}
+
+    {% for item in order_items %}
+
+        <div class="order-item">
+
+            <div>
+                <strong>{{ item.fruit }}</strong>
+            </div>
+
+            <div>
+                Quantity: {{ item.quantity }}
+            </div>
+
+            <div>
+                Price: ${{ "%.2f"|format(item.price * item.quantity) }}
+            </div>
+
+            <div>
+                Location: {{ item.location }}
+            </div>
+
+            <form
+                method="POST"
+                action="{{ url_for('order.remove_from_order', inventory_id=item.id) }}"
+                hx-post="{{ url_for('order.remove_from_order', inventory_id=item.id) }}"
+                hx-target="#order-items"
+                hx-swap="innerHTML"
+            >
+
+                <button type="submit" class="btn btn-sm btn-danger">
+                    Remove
+                </button>
+
+            </form>
+
+        </div>
+
+    {% endfor %}
+
+{% else %}
+
+    <p>No items selected.</p>
+
+{% endif %}
+
+
+{% if inventory is defined %}
+
+    <span
+        id="stock-{{ inventory.id }}"
+        hx-swap-oob="outerHTML"
+    >
+        {{ remaining_stock }}
+    </span>
+
+{% endif %}
+
+
+<!-- Update the Place Order section -->
+<div id="order-bottom" hx-swap-oob="outerHTML">
+
+    {% if order_items %}
+
+        <div class="order-total">
+            <strong>
+                Total: ${{ "%.2f"|format(total_price) }}
+            </strong>
+        </div>
+
+        <a
+            href="{{ url_for('order.checkout') }}"
+            class="place-order btn btn-primary"
+        >
+            Place Order
+        </a>
+
+    {% endif %}
+
+</div>

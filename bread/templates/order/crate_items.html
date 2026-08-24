@@ -1,0 +1,76 @@
+{% if order_items %}
+
+    {% for item in order_items %}
+
+        <div class="order-item">
+
+            <div>
+                <strong>{{ item.fruit }} Crate</strong>
+            </div>
+
+            <div>
+                {{ item.quantity }} Fruits
+            </div>
+
+            <div>
+                Price: ${{ "%.2f"|format(item.crate_price) }}
+            </div>
+
+            <div>
+                Location: {{ item.location }}
+            </div>
+
+        </div>
+
+    {% endfor %}
+
+
+    <div class="order-total">
+
+        <strong>
+            Total: ${{ "%.2f"|format(total_price) }}
+        </strong>
+
+    </div>
+
+
+    <div class="crate-cart-buttons">
+
+        <form
+            method="POST"
+            action="{{ url_for('order.reset_crate_order') }}"
+        >
+
+            <button type="submit" class="btn btn-danger">
+                Remove Crates
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- Divider -->
+
+    <hr>
+
+
+    <!-- Place Order -->
+
+    <div class="crate-place-order">
+
+        <a
+            href="{{ url_for('order.crate_checkout') }}"
+            class="place-order btn btn-primary"
+        >
+            Place Order
+        </a>
+
+    </div>
+
+
+{% else %}
+
+    <p>No crates selected.</p>
+
+{% endif %}

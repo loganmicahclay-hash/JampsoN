@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="fruit-page">
+
+    <!-- LEFT SIDE: Crate Inventory -->
+    <div class="fruit-inventory">
+
+        <h1>Available Crates</h1>
+
+        <div class="fruit-grid">
+
+            {% for item in inventory %}
+
+                {% if item.stock > 0 %}
+
+                    {% if item.id|string not in cart %}
+
+                    <div id="crate-{{ item.id }}">
+
+                        <form
+                            method="POST"
+                            action="{{ url_for('order.add_crate_to_order', inventory_id=item.id) }}"
+                            hx-post="{{ url_for('order.add_crate_to_order', inventory_id=item.id) }}"
+                            hx-target="#order-items"
+                            hx-swap="innerHTML"
+                            hx-on::after-request="document.getElementById('crate-{{ item.id }}')?.remove()"
+                        >
+
+                            <button
+                                type="submit"
+                                class="fruit-test fruit-{{ item.fruit | lower }}"
+                            >
+
+                                <h2>{{ item.fruit }} Crate</h2>
+
+                                <p>
+                                    Price:
+                                    ${{ "%.2f"|format(item.price * item.stock) }}
+                                </p>
+
+                                <p>
+                                    Fruits in Crate:
+                                    {{ item.stock }}
+                                </p>
+
+                                <p>
+                                    Expires:
+                                    {{ item.expiration.strftime("%b %d %Y") }}
+                                </p>
+
+                                <p>
+                                    Location:
+                                    {{ item.location }}
+                                </p>
+
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                    {% endif %}
+
+                {% endif %}
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+
+<!-- RIGHT SIDE: Order -->
+<div class="order-sidebar">
+
+    <h2>Your Order</h2>
+
+    <div id="order-items" class="order-items">
+
+        <p>No crates selected.</p>
+
+    </div>
+
+    <div id="order-bottom" class="order-bottom">
+        <!-- This will be filled by HTMX when crates are added -->
+    </div>
+
+</div>
+
+</div>
+
+{% endblock %}

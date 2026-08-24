@@ -1,0 +1,843 @@
+body {
+    background: #121212;
+    color: #eeeeee;
+    zoom: 1.25;
+
+    /* Clean black text outline */
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+
+/* =========================
+   GLOBAL BUTTON ANIMATION
+   ========================= */
+
+button,
+.btn,
+.btn-fruit,
+.btn-crate,
+.fruit-test {
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+button:hover,
+.btn:hover,
+.btn-fruit:hover,
+.btn-crate:hover,
+.fruit-test:hover {
+    transform: translateY(-5px);
+}
+
+
+/* =========================
+   NAVIGATION BAR
+   ========================= */
+
+.navbar {
+    background-color: #222;
+    border: 3px solid #111;
+
+    margin: 10px;
+    border-radius: 8px;
+
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+    padding: 10px 20px;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+
+    color: white !important;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+.navbar .nav-link {
+    color: white !important;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    padding: 8px 15px;
+    margin-left: 5px;
+
+    border-radius: 5px;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+.navbar .nav-link:hover {
+    background-color: #444;
+}
+
+.navbar .btn {
+    margin-left: 10px;
+}
+
+
+/* =========================
+   HEADINGS
+   ========================= */
+
+h1 {
+    color: #e43121;
+
+    text-align: center;
+
+    margin: 20px 0 30px;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+
+/* =========================
+   LOCATION BUTTON
+   ========================= */
+
+.location-button {
+    width: 60px;
+    height: 35px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================
+   HOME SCREEN
+   ========================= */
+
+.btn-fruit,
+.btn-crate {
+    width: 390px;
+    height: 375px;
+
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 2rem;
+    font-weight: bold;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+.btn-fruit {
+    background-color: #ff6b6b;
+    border-color: #ff6b6b;
+}
+
+.btn-fruit:hover {
+    background-color: #845ef7;
+    border-color: #845ef7;
+}
+
+.btn-crate {
+    background-color: #4caf50;
+    border-color: #4caf50;
+}
+
+.btn-crate:hover {
+    background-color: #845ef7;
+    border-color: #845ef7;
+}
+
+
+/* =========================
+   FRUIT PAGE
+   ========================= */
+
+.fruit-page {
+    display: flex;
+
+    width: 100%;
+
+    min-height: calc(100vh - 70px);
+}
+
+
+/* =========================
+   LEFT SIDE / INVENTORY
+   ========================= */
+
+.fruit-inventory {
+    width: 80%;
+
+    padding: 25px;
+
+    overflow-y: auto;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   FRUIT GRID
+   ========================= */
+
+.fruit-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================
+   FRUIT BUTTONS
+   ========================= */
+
+.fruit-test {
+    width: 100%;
+    height: 180px;
+
+    border: 2px solid #ddd;
+    border-radius: 10px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 18px;
+
+    box-sizing: border-box;
+
+    background-color: white;
+    color: #222;
+
+    cursor: pointer;
+
+    /* No outline on dark text */
+    text-shadow: none;
+}
+
+
+/* Fruit title */
+
+.fruit-test h2 {
+    margin: 0 0 8px;
+
+    color: #222;
+
+    text-shadow: none;
+}
+
+
+/* Fruit information */
+
+.fruit-test p {
+    margin: 3px 0;
+
+    line-height: 1.3;
+
+    color: #222;
+
+    text-shadow: none;
+}
+
+
+/* =========================
+   RIGHT SIDE / ORDER SIDEBAR
+   ========================= */
+
+.order-sidebar {
+    width: 20%;
+
+    padding: 20px;
+
+    border-left: 2px solid #333;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background: #121212;
+
+    box-sizing: border-box;
+
+    color: white;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+
+/* =========================
+   ORDER SIDEBAR TITLE
+   ========================= */
+
+.order-sidebar h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+
+    color: white;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+
+/* =========================
+   ORDER ITEMS
+   ========================= */
+
+.order-items {
+    margin-top: 10px;
+
+    max-height: 60vh;
+
+    overflow-y: auto;
+
+    padding: 5px;
+
+    color: white;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+
+/* Spacing between order items */
+
+.order-items > * {
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   NO ITEMS MESSAGE
+   ========================= */
+
+.order-items > p {
+    color: white;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+
+/* =========================
+   INDIVIDUAL ORDER ITEM
+   ========================= */
+
+.order-item {
+    padding: 10px;
+
+    background: #666;
+
+    border: 1px solid #444;
+    border-radius: 6px;
+
+    color: white;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+
+/* Order item text */
+
+.order-item div {
+    margin: 3px 0;
+
+    color: white;
+}
+
+
+/* =========================
+   REMOVE BUTTON
+   ========================= */
+
+.order-item .btn-danger {
+    margin-top: 8px;
+
+    font-weight: bold;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+
+/* =========================
+   ORDER BOTTOM
+   ========================= */
+
+.order-bottom {
+    border-top: 2px solid #333;
+
+    padding-top: 15px;
+
+    margin-top: auto;
+
+    color: white;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+
+/* =========================
+   TOTAL PRICE
+   ========================= */
+
+.order-total {
+    font-size: 18px;
+    font-weight: bold;
+
+    margin-bottom: 15px;
+
+    text-align: right;
+
+    color: white;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+
+/* =========================
+   PLACE ORDER BUTTON
+   ========================= */
+
+.place-order {
+    display: block;
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 6px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    text-align: center;
+
+    box-sizing: border-box;
+
+    text-decoration: none;
+
+    background-color: #0d6efd;
+
+    color: white !important;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+.place-order:hover {
+    background-color: #0b5ed7;
+
+    color: white !important;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+
+/* =========================
+   CHECKOUT
+   ========================= */
+
+.checkout-page {
+    min-height: calc(100vh - 70px);
+
+    background-color: #eeeeee;
+
+    padding: 30px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    box-sizing: border-box;
+}
+
+
+/* General container */
+
+.container {
+    padding-top: 20px;
+}
+
+
+/* General paragraphs */
+
+p {
+    margin: 10px 0;
+
+    line-height: 1.5;
+}
+
+
+/* Labels */
+
+label {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-weight: bold;
+}
+
+
+/* Buttons */
+
+button {
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   RECEIPT / CHECKOUT
+   ========================= */
+
+.receipt {
+    width: 600px;
+    max-width: 90%;
+
+    margin: 20px auto;
+
+    padding: 30px;
+
+    background: white;
+
+    border: 3px solid #222;
+    border-radius: 4px;
+
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.2);
+
+    box-sizing: border-box;
+
+    color: #222;
+
+    font-family: "Courier New", monospace;
+
+    text-shadow: none;
+}
+
+
+/* Receipt title */
+
+.receipt h1 {
+    text-align: center;
+
+    margin: 0 0 25px;
+
+    font-size: 28px;
+    font-weight: bold;
+
+    color: #222;
+
+    text-shadow: none;
+}
+
+
+/* Section headings */
+
+.receipt h2 {
+    text-align: center;
+
+    margin-bottom: 15px;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    color: #222;
+
+    text-shadow: none;
+}
+
+
+/* Customer information */
+
+.customer-information {
+    border-top: 2px dashed #222;
+    border-bottom: 2px dashed #222;
+
+    padding: 15px 0;
+
+    margin-bottom: 20px;
+}
+
+.customer-information p {
+    margin: 7px 0;
+
+    font-size: 16px;
+}
+
+
+/* Order section */
+
+.checkout-order {
+    margin-top: 20px;
+}
+
+
+/* Individual checkout item */
+
+.checkout-item {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 0;
+
+    border-bottom: 1px dotted #999;
+
+    font-size: 17px;
+}
+
+
+/* Checkout buttons */
+
+.checkout-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+
+/* Thank you message */
+
+.receipt-footer {
+    border-top: 2px dashed #222;
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    text-align: center;
+
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   FRUIT HOVER COLORS + ANIMATION
+   ========================= */
+
+.fruit-apple:hover {
+    background-color: #ff4d4d !important;
+}
+
+.fruit-banana:hover {
+    background-color: #ffd43b !important;
+}
+
+.fruit-orange:hover {
+    background-color: #ff922b !important;
+}
+
+.fruit-strawberry:hover {
+    background-color: #f03e3e !important;
+}
+
+.fruit-grape:hover {
+    background-color: #845ef7 !important;
+}
+
+.fruit-mango:hover {
+    background-color: #ff922b !important;
+}
+
+
+/* =========================
+   CURRENT LOCATIONS
+   ========================= */
+
+.card {
+    background-color: #222;
+    color: #eeeeee;
+    border: 2px solid #333;
+}
+
+.card-title {
+    color: #eeeeee !important;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+.card-text {
+    color: #eeeeee !important;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+.card-text strong {
+    color: #ffffff;
+}
+
+.location-address {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.location-info {
+    margin: 8px 0;
+}
+
+.location-divider {
+    border: 0;
+    border-top: 1px solid #555;
+    margin: 12px 0;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 1000px) {
+
+    .fruit-page {
+        flex-direction: column;
+    }
+
+    .fruit-inventory {
+        width: 100%;
+    }
+
+    .order-sidebar {
+        width: 100%;
+
+        border-left: none;
+
+        border-top: 2px solid #333;
+    }
+
+    .fruit-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .fruit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-fruit,
+    .btn-crate {
+        width: 90%;
+    }
+}
+
+/* =========================
+   WEBSITE CREDITS
+   ========================= */
+
+.website-credits {
+    border-top: 2px solid #333;
+
+    margin-top: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    text-align: center;
+
+    color: #888;
+
+    font-size: 14px;
+
+    text-shadow: none;
+}
+
+.website-credits p {
+    margin: 0;
+}

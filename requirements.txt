@@ -1,0 +1,5 @@
+flask >= 2.3.3
+peewee >= 3.16.3
+flask-login >= 0.6.3
+bcrypt >= 4.0.1
+flask-login@git+https://github.com/maxcountryman/flask-login.git

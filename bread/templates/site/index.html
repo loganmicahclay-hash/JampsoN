@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-12 mt-4 text-center">
+
+            {% if g.user.email %}
+
+            <h1>Welcome {{ g.user.fname }} to JampsoN Fruits!</h1>
+
+            {% else %}
+
+            <h1>Welcome to JampsoN Fruits!</h1>
+
+            {% endif %}
+
+            <br>
+
+            <div class="mt-4">
+                <h4>
+                    When you choose JampsoN Fruits, you choose
+                    freshness you can feel and flavor you can enjoy.
+                </h4>
+            </div>
+
+            <br>
+
+            {% if g.user.email %}
+
+            <div class="mt-4 text-start">
+                <h2>
+                    Place Order
+                </h2>
+            </div>
+
+            <div class="mt-2">
+
+                <a href="{{ url_for('order.fruit') }}" class="btn btn-fruit">
+                    Fruit
+                </a>
+
+                <a href="{{ url_for('order.crate') }}" class="btn btn-crate">
+                    Crate
+                </a>
+
+            </div>
+
+            {% else %}
+
+            <div class="text-start">
+                <h2>Please Sign Up or Login before continuing</h2>
+            </div>
+
+            <div class="mt-4">
+
+                <a href="{{ url_for('site.login') }}" class="btn btn-primary w-50">
+                    Login
+                </a>
+
+                <a href="{{ url_for('site.signup') }}" class="btn btn-secondary w-50 mt-2">
+                    Sign Up
+                </a>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+    </div>
+
+
+    <!-- Current Locations -->
+
+    <hr class="my-5">
+
+    <div class="mt-5">
+
+        <h2 class="text-center">
+            Current Locations
+        </h2>
+
+        <div class="row mt-4">
+
+            {% for location in locations %}
+
+            <div class="col-md-4 mb-4">
+
+                <div class="card h-100">
+
+                    <div class="card-body">
+
+                        <!-- Address -->
+                        <h3 class="card-title location-address">
+                            {{ location.address }}
+                        </h3>
+
+                        <!-- Manager -->
+                        <p class="card-text location-info">
+                            <strong>Manager:</strong>
+                            {{ location.name }}
+                        </p>
+
+                        <hr class="location-divider">
+
+                        <!-- Employees -->
+                        <p class="card-text location-info">
+                            <strong>Employees:</strong>
+                            {{ location.employees }}
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% else %}
+
+            <div class="col-12 text-center">
+                <p>No locations are currently available.</p>
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Website Credits -->
+
+<div class="website-credits">
+
+    <p>
+        Website created by Logan Clay and Caleb Johnson
+    </p>
+
+</div>
+
+
+{% endblock %}

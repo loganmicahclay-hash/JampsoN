@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="row">
+
+    <div class="col-sm-3 offset-sm-5 col-xs-12 p-3">
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-warning" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+    </div>
+
+</div>
+
+
+<div class="row">
+
+    <div class="col-sm-3 offset-sm-5 col-xs-12 p-3">
+
+        <h1>Sign Up</h1>
+
+        <form
+            action="{{ url_for('site.signup_post') }}"
+            method="POST"
+            name="signup_user_form"
+        >
+
+            <!-- First Name -->
+            <div class="form-group">
+                <label for="fname">First Name</label>
+
+                <input
+                    id="fname"
+                    name="fname"
+                    type="text"
+                    class="form-control"
+                    placeholder="First Name"
+                    autocomplete="given-name"
+                    required
+                >
+            </div>
+
+
+            <!-- Last Name -->
+            <div class="form-group mt-3">
+                <label for="lname">Last Name</label>
+
+                <input
+                    id="lname"
+                    name="lname"
+                    type="text"
+                    class="form-control"
+                    placeholder="Last Name"
+                    autocomplete="family-name"
+                    required
+                >
+            </div>
+
+
+            <!-- Company -->
+            <div class="form-group mt-3">
+                <label for="company_name">
+                    Company Name <small>(optional)</small>
+                </label>
+
+                <input
+                    id="company_name"
+                    name="company_name"
+                    type="text"
+                    class="form-control"
+                    placeholder="Company Name"
+                    autocomplete="organization"
+                >
+            </div>
+
+
+            <!-- Address -->
+            <div class="form-group mt-3">
+                <label for="address">Address</label>
+
+                <input
+                    id="address"
+                    name="address"
+                    type="text"
+                    class="form-control"
+                    placeholder="Address"
+                    autocomplete="street-address"
+                    required
+                >
+            </div>
+
+
+            <!-- Phone -->
+            <div class="form-group mt-3">
+                <label for="phone_number">Phone Number</label>
+
+                <input
+                    id="phone_number"
+                    name="phone_number"
+                    type="tel"
+                    class="form-control"
+                    placeholder="xxx-xxx-xxxx"
+                    autocomplete="tel"
+                    required
+                >
+            </div>
+
+
+            <!-- Email -->
+            <div class="form-group mt-3">
+                <label for="email">Email Address</label>
+
+                <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    class="form-control"
+                    placeholder="Enter email"
+                    autocomplete="email"
+                    required
+                >
+            </div>
+
+
+            <!-- Password -->
+            <div class="form-group mt-3">
+                <label for="password">Password</label>
+
+                <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    class="form-control"
+                    placeholder="Password"
+                    autocomplete="new-password"
+                    required
+                >
+            </div>
+
+
+            <!-- Buttons -->
+            <div class="form-group mt-4">
+
+                <button
+                    id="submit"
+                    name="submit"
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Sign Up
+                </button>
+
+                <a
+                    href="{{ url_for('site.login') }}"
+                    class="btn btn-secondary"
+                >
+                    Back to Login
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

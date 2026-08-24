@@ -1,0 +1,15 @@
+# Python virtual environment
+bin/
+lib/
+pyvenv.cfg
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Environment variables / secrets
+.env
+.env.*
+
+# Local database
+JampsoN.db

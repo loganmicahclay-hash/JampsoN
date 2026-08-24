@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="checkout-page">
+
+    <div class="receipt">
+
+        <h1>CUSTOMER RECEIPT</h1>
+
+
+        <!-- =========================
+             CUSTOMER INFORMATION
+             ========================= -->
+
+        <div class="customer-information">
+
+            <h2>Customer Information</h2>
+
+            <p>
+                <strong>Name:</strong>
+                {{ user.fname }} {{ user.lname }}
+            </p>
+
+            {% if user.company_name %}
+            <p>
+                <strong>Company:</strong>
+                {{ user.company_name }}
+            </p>
+            {% endif %}
+
+            <p>
+                <strong>Address:</strong>
+                {{ user.address }}
+            </p>
+
+            <p>
+                <strong>Phone:</strong>
+                {{ user.phone_number }}
+            </p>
+
+            <p>
+                <strong>Email:</strong>
+                {{ user.email }}
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             ORDER
+             ========================= -->
+
+        <div class="checkout-order">
+
+            <h2>Your Order</h2>
+
+            {% for item in order_items %}
+
+            <div class="checkout-item">
+
+                <span>
+                    <strong>{{ item.fruit }}</strong>
+                    x{{ item.quantity }}
+                </span>
+
+                <span>
+                    {{ item.location }}
+                </span>
+
+                <span>
+                    ${{ "%.2f"|format(item.price * item.quantity) }}
+                </span>
+
+            </div>
+
+            {% endfor %}
+
+
+            <!-- Total -->
+
+            <div class="order-total">
+
+                <strong>
+                    Total: ${{ "%.2f"|format(total_price) }}
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             BUTTONS
+             ========================= -->
+
+        <div class="checkout-buttons">
+
+            <a
+                href="{{ url_for('order.fruit') }}"
+                class="btn btn-secondary"
+            >
+                Go Back
+            </a>
+
+            <form
+                method="POST"
+                action="{{ url_for('order.confirm_order') }}"
+            >
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Confirm Order
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- =========================
+             FOOTER
+             ========================= -->
+
+        <div class="receipt-footer">
+            THANK YOU FOR YOUR ORDER!
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

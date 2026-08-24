@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/css/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/css/style.css" rel="stylesheet">
+
+  <title>JampsoN Fruit</title>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="/">
+        JampsoN Fruits
+      </a>
+
+      <button class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation">
+
+        <span class="navbar-toggler-icon"></span>
+
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <!-- Home -->
+          <li class="nav-item">
+            <a class="nav-link" href="/">
+              Home
+            </a>
+          </li>
+
+
+          {% if "admin" in g.user_role %}
+
+          <!-- Locations -->
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('location.browse') }}">
+              Locations
+            </a>
+          </li>
+
+
+          <!-- Inventory -->
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('inventory.browse') }}">
+              Inventory
+            </a>
+          </li>
+
+
+          <!-- Customers -->
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('customer.customers') }}">
+              Customers
+            </a>
+          </li>
+
+          {% endif %}
+
+        </ul>
+
+
+        <!-- Login / Logout -->
+
+        {% if g.user.email %}
+
+          <span class="navbar-text me-3">
+            Welcome, {{ g.user.fname }}
+          </span>
+
+          <a href="{{ url_for('site.logout') }}"
+             class="btn btn-outline-primary">
+            Logout
+          </a>
+
+        {% else %}
+
+          <a href="{{ url_for('site.login') }}"
+             class="btn btn-primary">
+            Login
+          </a>
+
+        {% endif %}
+
+      </div>
+    </div>
+  </nav>
+
+
+  <div id="content">
+
+    {% block body %}
+    {% endblock %}
+
+  </div>
+
+
+  <script src="/static/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/js/htmx-1.9.6.min.js"></script>
+
+</body>
+
+</html>
