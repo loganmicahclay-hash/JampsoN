@@ -2,6 +2,10 @@
 
 A web-based inventory and ordering application built with Flask.
 
+## Project Status
+
+JampsoN is a sandbox project developed for learning and experimentation with Flask, HTMX, database management, and web application development. It is not intended for production use.
+
 ## Features
 
 - Customer management
