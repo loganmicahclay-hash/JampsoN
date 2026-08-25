@@ -2,7 +2,11 @@ body {
     background: #121212;
     color: #eeeeee;
 
-    /* Clean black text outline */
+    /* Clean, friendly system font */
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-weight: 500;
+
+    /* Subtle black text outline */
     text-shadow:
         -1px -1px 0 #000,
          1px -1px 0 #000,
@@ -20,6 +24,9 @@ button,
 .btn-fruit,
 .btn-crate,
 .fruit-test {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-weight: 600;
+
     transition:
         background-color 0.2s ease,
         border-color 0.2s ease,
@@ -43,19 +50,16 @@ button:hover,
 .navbar {
     background-color: #222;
     border: 3px solid #111;
-
     margin: 10px;
     border-radius: 8px;
-
     box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
-
     padding: 10px 20px;
 }
 
 .navbar-brand {
+    font-family: "Trebuchet MS", Arial, sans-serif;
     font-size: 24px;
-    font-weight: bold;
-
+    font-weight: 700;
     color: white !important;
 
     text-shadow:
@@ -66,14 +70,12 @@ button:hover,
 }
 
 .navbar .nav-link {
+    font-family: "Trebuchet MS", Arial, sans-serif;
     color: white !important;
-
     font-size: 17px;
-    font-weight: bold;
-
+    font-weight: 600;
     padding: 8px 15px;
     margin-left: 5px;
-
     border-radius: 5px;
 
     text-shadow:
@@ -97,17 +99,20 @@ button:hover,
    ========================= */
 
 h1 {
+    font-family: "Trebuchet MS", Arial, sans-serif;
     color: #e43121;
-
     text-align: center;
-
     margin: 20px 0 30px;
 
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
     text-shadow:
-        -1px -1px 0 #000,
-         1px -1px 0 #000,
-        -1px  1px 0 #000,
-         1px  1px 0 #000;
+        -2px -2px 0 #000,
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000;
 }
 
 
